@@ -50,6 +50,22 @@
     footer strong{color:#d6f36e}
     @media(max-width:900px){.services{grid-template-columns:repeat(2,1fr)}.about,.contact{grid-template-columns:1fr}}
     @media(max-width:620px){.topbar{justify-content:center}.menu{display:none}.brand{font-size:17px}.hero{margin-top:12px}.hero img{border-radius:14px}.cta-row{margin-top:12px}.btn{width:100%}.services{grid-template-columns:1fr}.section-title h2{font-size:27px}section{padding:52px 5%}}
+
+    .service{appearance:none;-webkit-appearance:none;border:0;background:transparent;padding:0;text-align:left;cursor:pointer;font:inherit;color:inherit;width:100%}
+    .service-link{height:100%}
+    .service:focus-visible{outline:3px solid var(--gold);outline-offset:4px;border-radius:18px}
+    .modal{position:fixed;inset:0;background:#062719aa;backdrop-filter:blur(5px);display:none;align-items:center;justify-content:center;padding:20px;z-index:100}
+    .modal.show{display:flex}
+    .modal-box{position:relative;background:#fff;width:min(650px,100%);max-height:90vh;overflow:auto;border-radius:24px;padding:30px;box-shadow:0 25px 70px #00000040}
+    .modal-close{position:absolute;right:15px;top:12px;width:42px;height:42px;border:0;border-radius:50%;background:#eef6ef;color:var(--green);font-size:30px;cursor:pointer;line-height:1}
+    .modal-icon{font-size:42px;margin-bottom:6px}
+    .modal-box h2{color:var(--green);margin-bottom:4px}
+    .modal-sub{color:var(--muted);margin-bottom:14px}
+    #modalList{padding-left:24px;margin:0 0 22px}
+    #modalList li{margin:7px 0}
+    .modal-actions{display:flex;gap:10px;flex-wrap:wrap}
+    .btn.whatsapp{background:#168b45;color:#fff;border-color:#168b45}
+    @media(max-width:600px){.modal-box{padding:24px 18px}.modal-actions .btn{width:100%}}
   </style>
 </head>
 <body>
@@ -102,25 +118,40 @@
     <section id="services">
       <div class="section-title">
         <h2>আমাদের সেবাসমূহ</h2>
-        <p>আপনার প্রয়োজন অনুযায়ী অনলাইন ও গ্রাফিক্স ডিজাইন সেবা।</p>
+        <p>যে সেবাটি প্রয়োজন, সেটিতে ক্লিক করে বিস্তারিত কাজের তালিকা দেখুন।</p>
       </div>
       <div class="services">
-        <a class="service" href="https://www.nidw.gov.bd/" target="_blank" rel="noopener"><div class="service-link"><div class="icon">🪪</div><h3>NID সেবা</h3><p>নির্দেশনা ও আবেদন সংক্রান্ত সহায়তা।</p><span class="click">অনলাইন সেবা খুলুন →</span></div></a>
-        <a class="service" href="https://www.bdris.gov.bd/" target="_blank" rel="noopener"><div class="service-link"><div class="icon">📜</div><h3>জন্ম ও মৃত্যু নিবন্ধন</h3><p>নিবন্ধন ও সংশোধন সংক্রান্ত সহায়তা।</p><span class="click">অনলাইন সেবা খুলুন →</span></div></a>
-        <a class="service" href="https://wa.me/8801815016541?text=%E0%A6%B8%E0%A7%8D%E0%A6%95%E0%A7%81%E0%A6%B2%2F%E0%A6%95%E0%A6%B2%E0%A7%87%E0%A6%9C%20%E0%A6%AD%E0%A6%B0%E0%A7%8D%E0%A6%A4%E0%A6%BF%20%E0%A6%AC%E0%A6%BE%20%E0%A6%B0%E0%A7%87%E0%A6%9C%E0%A6%BE%E0%A6%B2%E0%A7%8D%E0%A6%9F%20%E0%A6%B8%E0%A7%87%E0%A6%AC%E0%A6%BE%20%E0%A6%A8%E0%A6%BF%E0%A6%A4%E0%A7%87%20%E0%A6%9A%E0%A6%BE%E0%A6%87%E0%A5%A4" target="_blank" rel="noopener"><div class="service-link"><div class="icon">🎓</div><h3>স্কুল/কলেজ আবেদন</h3><p>ভর্তি আবেদন ও রেজাল্ট চেক সংক্রান্ত সহায়তা।</p><span class="click">WhatsApp-এ যোগাযোগ করুন →</span></div></a>
-        <a class="service" href="https://pcc.police.gov.bd/" target="_blank" rel="noopener"><div class="service-link"><div class="icon">🛡️</div><h3>পুলিশ ক্লিয়ারেন্স</h3><p>অনলাইন আবেদন সংক্রান্ত সহায়তা।</p><span class="click">অনলাইন আবেদন খুলুন →</span></div></a>
-        <a class="service" href="https://wa.me/8801815016541?text=%E0%A6%9A%E0%A6%BE%E0%A6%95%E0%A6%B0%E0%A6%BF%E0%A6%B0%20%E0%A6%85%E0%A6%A8%E0%A6%B2%E0%A6%BE%E0%A6%87%E0%A6%A8%20%E0%A6%86%E0%A6%AC%E0%A7%87%E0%A6%A6%E0%A6%A8%20%E0%A6%95%E0%A6%B0%E0%A6%A4%E0%A7%87%20%E0%A6%9A%E0%A6%BE%E0%A6%87%E0%A5%A4" target="_blank" rel="noopener"><div class="service-link"><div class="icon">💼</div><h3>সরকারি/বেসরকারি চাকরি</h3><p>চাকরির অনলাইন আবেদন সংক্রান্ত সেবা।</p><span class="click">WhatsApp-এ যোগাযোগ করুন →</span></div></a>
-        <a class="service" href="https://wa.me/8801815016541?text= TIN%20%E0%A6%B8%E0%A6%BE%E0%A6%B0%E0%A7%8D%E0%A6%9F%E0%A6%BF%E0%A6%AB%E0%A6%BF%E0%A6%95%E0%A7%87%E0%A6%9F%20%E0%A6%B8%E0%A7%87%E0%A6%AC%E0%A6%BE%20%E0%A6%A8%E0%A6%BF%E0%A6%A4%E0%A7%87%20%E0%A6%9A%E0%A6%BE%E0%A6%87%E0%A5%A4" target="_blank" rel="noopener"><div class="service-link"><div class="icon">🧾</div><h3>TIN সার্টিফিকেট</h3><p>TIN সংক্রান্ত অনলাইন সেবা।</p><span class="click">WhatsApp-এ যোগাযোগ করুন →</span></div></a>
-        <a class="service" href="https://www.epassport.gov.bd/" target="_blank" rel="noopener"><div class="service-link"><div class="icon">🛂</div><h3>পাসপোর্ট সেবা</h3><p>আবেদন ও সংশোধন সংক্রান্ত সহায়তা।</p><span class="click">ই-পাসপোর্ট খুলুন →</span></div></a>
-        <a class="service" href="https://wa.me/8801815016541?text=%E0%A6%85%E0%A6%A8%E0%A6%B2%E0%A6%BE%E0%A6%87%E0%A6%A8%20%E0%A6%AB%E0%A6%B0%E0%A7%8D%E0%A6%AE%20%E0%A6%AA%E0%A7%82%E0%A6%B0%E0%A6%A3%20%E0%A6%B8%E0%A7%87%E0%A6%AC%E0%A6%BE%20%E0%A6%A8%E0%A6%BF%E0%A6%A4%E0%A7%87%20%E0%A6%9A%E0%A6%BE%E0%A6%87%E0%A5%A4" target="_blank" rel="noopener"><div class="service-link"><div class="icon">📄</div><h3>অনলাইন ফর্ম পূরণ</h3><p>বিভিন্ন ধরনের অনলাইন ফর্ম পূরণে সহায়তা।</p><span class="click">WhatsApp-এ যোগাযোগ করুন →</span></div></a>
-        <a class="service" href="https://wa.me/8801815016541?text=%E0%A6%9F%E0%A6%BE%E0%A6%87%E0%A6%AA%E0%A6%BF%E0%A6%82%20%E0%A6%93%20%E0%A6%AB%E0%A6%9F%E0%A7%8B%20%E0%A6%8F%E0%A6%A1%E0%A6%BF%E0%A6%9F%E0%A6%BF%E0%A6%82%20%E0%A6%B8%E0%A7%87%E0%A6%AC%E0%A6%BE%20%E0%A6%A8%E0%A6%BF%E0%A6%A4%E0%A7%87%20%E0%A6%9A%E0%A6%BE%E0%A6%87%E0%A5%A4" target="_blank" rel="noopener"><div class="service-link"><div class="icon">🎨</div><h3>টাইপিং ও ফটো এডিটিং</h3><p>টাইপিং, ছবি এডিটিং ও ডিজিটাল কাজ।</p><span class="click">WhatsApp-এ যোগাযোগ করুন →</span></div></a>
-        <a class="service" href="https://wa.me/8801815016541?text=%E0%A6%9B%E0%A6%AC%E0%A6%BF%2F%E0%A6%A1%E0%A6%95%E0%A7%81%E0%A6%AE%E0%A7%87%E0%A6%A8%E0%A7%8D%E0%A6%9F%20%E0%A6%8F%E0%A6%95%E0%A7%8D%E0%A6%B8%E0%A6%9F%E0%A7%8D%E0%A6%B0%E0%A6%BE%E0%A6%95%E0%A7%8D%E0%A6%9F%20%E0%A6%B8%E0%A7%87%E0%A6%AC%E0%A6%BE%20%E0%A6%A8%E0%A6%BF%E0%A6%A4%E0%A7%87%20%E0%A6%9A%E0%A6%BE%E0%A6%87%E0%A5%A4" target="_blank" rel="noopener"><div class="service-link"><div class="icon">📸</div><h3>ছবি/ডকুমেন্ট এক্সট্রাক্ট</h3><p>ছবি বা ডকুমেন্ট থেকে প্রয়োজনীয় তথ্য/ফাইল প্রস্তুত।</p><span class="click">WhatsApp-এ যোগাযোগ করুন →</span></div></a>
-        <a class="service" href="https://wa.me/8801815016541?text=%E0%A6%AA%E0%A6%BE%E0%A6%B8%E0%A6%AA%E0%A7%8B%E0%A6%B0%E0%A7%8D%E0%A6%9F%20%E0%A6%B8%E0%A6%BE%E0%A6%87%E0%A6%9C%20%E0%A6%9B%E0%A6%AC%E0%A6%BF%20%E0%A6%A4%E0%A7%88%E0%A6%B0%E0%A6%BF%20%E0%A6%95%E0%A6%B0%E0%A6%A4%E0%A7%87%20%E0%A6%9A%E0%A6%BE%E0%A6%87%E0%A5%A4" target="_blank" rel="noopener"><div class="service-link"><div class="icon">🖼️</div><h3>পাসপোর্ট সাইজ ছবি</h3><p>পাসপোর্ট সাইজ ও প্রয়োজনীয় ফরম্যাটের ছবি।</p><span class="click">WhatsApp-এ যোগাযোগ করুন →</span></div></a>
-        <a class="service" href="https://wa.me/8801815016541?text=Flexiload%20%E0%A6%B8%E0%A7%87%E0%A6%AC%E0%A6%BE%20%E0%A6%A8%E0%A6%BF%E0%A6%A4%E0%A7%87%20%E0%A6%9A%E0%A6%BE%E0%A6%87%E0%A5%A4" target="_blank" rel="noopener"><div class="service-link"><div class="icon">📱</div><h3>Flexiload সেবা</h3><p>ফ্লেক্সিলোড সংক্রান্ত সেবা।</p><span class="click">WhatsApp-এ যোগাযোগ করুন →</span></div></a>
-        <a class="service" href="https://wa.me/8801815016541?text=Excel%20Works%20%E0%A6%B8%E0%A7%87%E0%A6%AC%E0%A6%BE%20%E0%A6%A8%E0%A6%BF%E0%A6%A4%E0%A7%87%20%E0%A6%9A%E0%A6%BE%E0%A6%87%E0%A5%A4" target="_blank" rel="noopener"><div class="service-link"><div class="icon">📊</div><h3>Excel Works</h3><p>ডাটা এন্ট্রি, হিসাব, তালিকা তৈরি ও অন্যান্য Excel কাজ।</p><span class="click">WhatsApp-এ যোগাযোগ করুন →</span></div></a>
-        <a class="service" href="https://wa.me/8801815016541?text=%E0%A6%97%E0%A7%8D%E0%A6%B0%E0%A6%BE%E0%A6%AB%E0%A6%BF%E0%A6%95%E0%A7%8D%E0%A6%B8%20%E0%A6%A1%E0%A6%BF%E0%A6%9C%E0%A6%BE%E0%A6%87%E0%A6%A8%20%E0%A6%B8%E0%A7%87%E0%A6%AC%E0%A6%BE%20%E0%A6%A8%E0%A6%BF%E0%A6%A4%E0%A7%87%20%E0%A6%9A%E0%A6%BE%E0%A6%87%E0%A5%A4" target="_blank" rel="noopener"><div class="service-link"><div class="icon">🖌️</div><h3>গ্রাফিক্স ডিজাইন</h3><p>ব্যানার, পোস্টার, ভিজিটিং কার্ড, লোগোসহ ডিজাইন কাজ।</p><span class="click">WhatsApp-এ যোগাযোগ করুন →</span></div></a>
+        <button class="service" type="button" data-service="nid"><div class="service-link"><div class="icon">🪪</div><h3>NID সেবা</h3><p>নতুন আবেদন, সংশোধন, নবায়ন ও অন্যান্য NID সহায়তা।</p><span class="click">বিস্তারিত সেবা দেখুন →</span></div></button>
+        <button class="service" type="button" data-service="birth"><div class="service-link"><div class="icon">📜</div><h3>জন্ম ও মৃত্যু নিবন্ধন</h3><p>নতুন নিবন্ধন, সংশোধন, পুনঃমুদ্রণ ও যাচাই।</p><span class="click">বিস্তারিত সেবা দেখুন →</span></div></button>
+        <button class="service" type="button" data-service="education"><div class="service-link"><div class="icon">🎓</div><h3>স্কুল/কলেজ/ভর্তি</h3><p>ভর্তি আবেদন, রেজাল্ট ও শিক্ষা সংক্রান্ত অনলাইন কাজ।</p><span class="click">বিস্তারিত সেবা দেখুন →</span></div></button>
+        <button class="service" type="button" data-service="pcc"><div class="service-link"><div class="icon">🛡️</div><h3>পুলিশ ক্লিয়ারেন্স</h3><p>পুলিশ ক্লিয়ারেন্সের অনলাইন আবেদন ও সহায়তা।</p><span class="click">বিস্তারিত সেবা দেখুন →</span></div></button>
+        <button class="service" type="button" data-service="jobs"><div class="service-link"><div class="icon">💼</div><h3>সরকারি/বেসরকারি চাকরি</h3><p>চাকরির আবেদন, ফরম পূরণ, প্রবেশপত্র ও ফলাফল।</p><span class="click">বিস্তারিত সেবা দেখুন →</span></div></button>
+        <button class="service" type="button" data-service="tin"><div class="service-link"><div class="icon">🧾</div><h3>TIN সার্টিফিকেট</h3><p>TIN রেজিস্ট্রেশন, সংশোধন ও সার্টিফিকেট সংক্রান্ত কাজ।</p><span class="click">বিস্তারিত সেবা দেখুন →</span></div></button>
+        <button class="service" type="button" data-service="passport"><div class="service-link"><div class="icon">🛂</div><h3>পাসপোর্ট সেবা</h3><p>নতুন পাসপোর্ট, রি-ইস্যু, সংশোধন ও আবেদন সহায়তা।</p><span class="click">বিস্তারিত সেবা দেখুন →</span></div></button>
+        <button class="service" type="button" data-service="forms"><div class="service-link"><div class="icon">📄</div><h3>অনলাইন ফর্ম পূরণ</h3><p>সরকারি-বেসরকারি বিভিন্ন অনলাইন ফরম পূরণ।</p><span class="click">বিস্তারিত সেবা দেখুন →</span></div></button>
+        <button class="service" type="button" data-service="typing"><div class="service-link"><div class="icon">⌨️</div><h3>টাইপিং ও ফটো এডিটিং</h3><p>বাংলা/ইংরেজি টাইপিং, ছবি এডিটিং ও ডিজিটাল কাজ।</p><span class="click">বিস্তারিত সেবা দেখুন →</span></div></button>
+        <button class="service" type="button" data-service="document"><div class="service-link"><div class="icon">📁</div><h3>ছবি/ডকুমেন্ট এক্সট্রাক্ট</h3><p>মোবাইল/ডকুমেন্ট থেকে প্রয়োজনীয় ফাইল ও তথ্য প্রস্তুত।</p><span class="click">বিস্তারিত সেবা দেখুন →</span></div></button>
+        <button class="service" type="button" data-service="photo"><div class="service-link"><div class="icon">📸</div><h3>পাসপোর্ট সাইজ ছবি</h3><p>পাসপোর্ট সাইজ ও প্রয়োজনীয় ফরম্যাটের ছবি তৈরি।</p><span class="click">বিস্তারিত সেবা দেখুন →</span></div></button>
+        <button class="service" type="button" data-service="flexi"><div class="service-link"><div class="icon">📱</div><h3>Flexiload সেবা</h3><p>সকল অপারেটরে ফ্লেক্সিলোড ও মোবাইল রিচার্জ।</p><span class="click">বিস্তারিত সেবা দেখুন →</span></div></button>
+        <button class="service" type="button" data-service="excel"><div class="service-link"><div class="icon">📊</div><h3>Excel Works</h3><p>Data Entry, হিসাব, List Making ও অন্যান্য Excel কাজ।</p><span class="click">বিস্তারিত সেবা দেখুন →</span></div></button>
+        <button class="service" type="button" data-service="graphics"><div class="service-link"><div class="icon">🎨</div><h3>গ্রাফিক্স ডিজাইন</h3><p>ব্যানার, পোস্টার, লোগো, ভিজিটিং কার্ডসহ ডিজাইন।</p><span class="click">বিস্তারিত সেবা দেখুন →</span></div></button>
       </div>
     </section>
+
+    <div class="modal" id="serviceModal" aria-hidden="true">
+      <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+        <button class="modal-close" id="modalClose" aria-label="বন্ধ করুন">×</button>
+        <div class="modal-icon" id="modalIcon">🪪</div>
+        <h2 id="modalTitle">সেবার বিস্তারিত</h2>
+        <p class="modal-sub" id="modalSub"></p>
+        <ul id="modalList"></ul>
+        <div class="modal-actions">
+          <a class="btn primary" id="modalCall" href="tel:+8801815016541">📞 কল করুন</a>
+          <a class="btn whatsapp" id="modalWhatsapp" href="https://wa.me/8801815016541" target="_blank" rel="noopener">💬 WhatsApp</a>
+          <a class="btn secondary" id="modalOfficial" href="#" target="_blank" rel="noopener" style="display:none">🌐 সরকারি সাইট</a>
+        </div>
+      </div>
+    </div>
 
     <section id="contact">
       <div class="section-title">
@@ -143,5 +174,44 @@
   <footer>
     © 2026 <strong>মা অনলাইন সলিউশন এন্ড গ্রাফিক্স ডিজাইন</strong> — সর্বস্বত্ব সংরক্ষিত।
   </footer>
+  <script>
+    const serviceData = {
+      nid:{icon:'🪪',title:'NID সেবা',sub:'জাতীয় পরিচয়পত্র সংক্রান্ত বিভিন্ন অনলাইন সেবায় সহায়তা করা হয়।',items:['নতুন NID আবেদন','NID তথ্য সংশোধন আবেদন','NID ঠিকানা/ব্যক্তিগত তথ্য সংশোধন সংক্রান্ত সহায়তা','NID নবায়ন/স্মার্ট কার্ড সংক্রান্ত সহায়তা','হারানো NID সংক্রান্ত আবেদন/সহায়তা','NID ডাউনলোড','NID তথ্য যাচাই ও প্রয়োজনীয় অনলাইন কাজ'],official:'https://services.nidw.gov.bd/'},
+      birth:{icon:'📜',title:'জন্ম ও মৃত্যু নিবন্ধন',sub:'জন্ম ও মৃত্যু নিবন্ধনের বিভিন্ন অনলাইন কাজ করা হয়।',items:['নতুন জন্ম নিবন্ধন আবেদন','জন্ম নিবন্ধন সংশোধন আবেদন','জন্ম নিবন্ধনের তথ্য সংশোধন','জন্ম নিবন্ধন পুনঃমুদ্রণ/ডাউনলোড সংক্রান্ত সহায়তা','জন্ম নিবন্ধন যাচাই','নতুন মৃত্যু নিবন্ধন আবেদন','মৃত্যু নিবন্ধন সংশোধন আবেদন'],official:'https://bdris.gov.bd/'},
+      education:{icon:'🎓',title:'স্কুল/কলেজ/ভর্তি সেবা',sub:'শিক্ষা প্রতিষ্ঠানের বিভিন্ন অনলাইন আবেদন ও ফলাফল সংক্রান্ত কাজ।',items:['স্কুলে ভর্তি আবেদন','কলেজে ভর্তি আবেদন','বিশ্ববিদ্যালয়/অন্যান্য ভর্তি আবেদন','ভর্তি ফরম পূরণ','ভর্তি ফলাফল দেখা','রেজাল্ট/ফলাফল চেক','অনলাইন ফি/আবেদন সংক্রান্ত প্রয়োজনীয় সহায়তা']},
+      pcc:{icon:'🛡️',title:'পুলিশ ক্লিয়ারেন্স',sub:'পুলিশ ক্লিয়ারেন্স সার্টিফিকেটের অনলাইন আবেদন সংক্রান্ত সহায়তা।',items:['নতুন পুলিশ ক্লিয়ারেন্স আবেদন','অনলাইন ফরম পূরণ','প্রয়োজনীয় তথ্য/ডকুমেন্ট প্রস্তুত','আবেদন সংক্রান্ত সহায়তা','আবেদনের অবস্থা/স্ট্যাটাস চেক','সার্টিফিকেট সংক্রান্ত প্রয়োজনীয় সহায়তা'],official:'https://pcc.police.gov.bd/'},
+      jobs:{icon:'💼',title:'সরকারি/বেসরকারি চাকরি',sub:'চাকরির অনলাইন আবেদন থেকে ফলাফল দেখা পর্যন্ত বিভিন্ন কাজ।',items:['সরকারি চাকরির অনলাইন আবেদন','বেসরকারি চাকরির অনলাইন আবেদন','চাকরির ফরম পূরণ','আবেদন ফি/পেমেন্ট সংক্রান্ত সহায়তা','Admit Card/প্রবেশপত্র ডাউনলোড','চাকরির পরীক্ষার ফলাফল দেখা','অন্যান্য অনলাইন নিয়োগ সংক্রান্ত কাজ']},
+      tin:{icon:'🧾',title:'TIN সার্টিফিকেট',sub:'e-TIN সংক্রান্ত বিভিন্ন অনলাইন সেবা।',items:['নতুন TIN/e-TIN রেজিস্ট্রেশন','TIN সার্টিফিকেট ডাউনলোড','TIN তথ্য সংশোধন সংক্রান্ত সহায়তা','TIN সংক্রান্ত অনলাইন আবেদন','প্রয়োজনীয় তথ্য/ফাইল প্রস্তুত','TIN যাচাই/সংক্রান্ত প্রয়োজনীয় সহায়তা']},
+      passport:{icon:'🛂',title:'পাসপোর্ট সেবা',sub:'e-Passport সংক্রান্ত আবেদন ও অনলাইন সহায়তা।',items:['নতুন e-Passport আবেদন','পাসপোর্ট রি-ইস্যু/রিনিউ আবেদন','পাসপোর্টের তথ্য সংশোধন সংক্রান্ত সহায়তা','অনলাইন আবেদন ফরম পূরণ','Appointment সংক্রান্ত সহায়তা','আবেদন স্ট্যাটাস চেক','প্রয়োজনীয় ডকুমেন্ট/তথ্য প্রস্তুত'],official:'https://www.epassport.gov.bd/'},
+      forms:{icon:'📄',title:'অনলাইন ফর্ম পূরণ',sub:'বিভিন্ন সরকারি ও বেসরকারি অনলাইন ফর্ম পূরণ করা হয়।',items:['সরকারি অনলাইন ফর্ম পূরণ','বেসরকারি অনলাইন ফর্ম পূরণ','ভর্তি ফর্ম পূরণ','চাকরির ফর্ম পূরণ','বিভিন্ন আবেদন ফর্ম পূরণ','অনলাইন রেজিস্ট্রেশন','প্রয়োজনীয় তথ্য ও ডকুমেন্ট আপলোডে সহায়তা']},
+      typing:{icon:'⌨️',title:'টাইপিং ও ফটো এডিটিং',sub:'ডিজিটাল টাইপিং ও ছবি এডিটিংয়ের বিভিন্ন কাজ।',items:['বাংলা টাইপিং','ইংরেজি টাইপিং','আবেদনপত্র/চিঠি টাইপ','CV/বায়োডাটা তৈরি','ছবি এডিটিং','ছবির ব্যাকগ্রাউন্ড পরিবর্তন','ডকুমেন্ট/ছবি সাজানো ও প্রস্তুত']},
+      document:{icon:'📁',title:'ছবি/ডকুমেন্ট এক্সট্রাক্ট',sub:'মোবাইল বা ডকুমেন্ট থেকে প্রয়োজনীয় ছবি, লেখা ও ফাইল প্রস্তুত করা হয়।',items:['মোবাইল থেকে ছবি/ডকুমেন্ট বের করা','ডকুমেন্ট স্ক্যান','ছবি স্ক্যান','PDF তৈরি','PDF থেকে ছবি/তথ্য বের করা','ছবি/ডকুমেন্টের প্রয়োজনীয় অংশ আলাদা করা','ফাইল রূপান্তর ও প্রস্তুত করা']},
+      photo:{icon:'📸',title:'পাসপোর্ট সাইজ ছবি',sub:'বিভিন্ন প্রয়োজন অনুযায়ী পাসপোর্ট সাইজ ছবি তৈরি করা হয়।',items:['পাসপোর্ট সাইজ ছবি তৈরি','ভিসা/আবেদন উপযোগী ছবি তৈরি','ছবির ব্যাকগ্রাউন্ড পরিবর্তন','ছবির সাইজ/ফরম্যাট ঠিক করা','একাধিক কপি ছবি প্রস্তুত','প্রয়োজন অনুযায়ী ছবি এডিট']},
+      flexi:{icon:'📱',title:'Flexiload সেবা',sub:'মোবাইল রিচার্জ ও ফ্লেক্সিলোড সেবা।',items:['সকল অপারেটরে Flexiload','মোবাইল রিচার্জ','প্রিপেইড রিচার্জ','প্রয়োজনীয় মোবাইল রিচার্জ সহায়তা']},
+      excel:{icon:'📊',title:'Excel Works',sub:'ব্যক্তিগত ও ব্যবসায়িক বিভিন্ন Excel কাজ করা হয়।',items:['Data Entry','হিসাব তৈরি','List Making','নাম/তালিকা তৈরি','Excel Sheet তৈরি ও সাজানো','ডাটা সাজানো/ফিল্টার','অন্যান্য প্রয়োজনীয় Excel কাজ']},
+      graphics:{icon:'🎨',title:'গ্রাফিক্স ডিজাইন',sub:'প্রয়োজন অনুযায়ী বিভিন্ন ডিজিটাল গ্রাফিক্স ডিজাইন করা হয়।',items:['ব্যানার ডিজাইন','পোস্টার ডিজাইন','ফেসবুক পোস্ট ডিজাইন','ভিজিটিং কার্ড ডিজাইন','লোগো ডিজাইন','ফ্লায়ার/লিফলেট ডিজাইন','অন্যান্য গ্রাফিক্স ডিজাইন'] }
+    };
+    const modal=document.getElementById('serviceModal');
+    const title=document.getElementById('modalTitle');
+    const icon=document.getElementById('modalIcon');
+    const sub=document.getElementById('modalSub');
+    const list=document.getElementById('modalList');
+    const official=document.getElementById('modalOfficial');
+    const wa=document.getElementById('modalWhatsapp');
+    const close=()=>{modal.classList.remove('show');modal.setAttribute('aria-hidden','true');document.body.style.overflow='';};
+    document.querySelectorAll('[data-service]').forEach(btn=>btn.addEventListener('click',()=>{
+      const d=serviceData[btn.dataset.service]; if(!d)return;
+      icon.textContent=d.icon; title.textContent=d.title; sub.textContent=d.sub;
+      list.innerHTML=d.items.map(x=>'<li>✓ '+x+'</li>').join('');
+      const msg=encodeURIComponent(d.title+' এর সেবা নিতে চাই।');
+      wa.href='https://wa.me/8801815016541?text='+msg;
+      if(d.official){official.href=d.official;official.style.display='inline-flex';}else{official.style.display='none';}
+      modal.classList.add('show');modal.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';
+    }));
+    document.getElementById('modalClose').addEventListener('click',close);
+    modal.addEventListener('click',e=>{if(e.target===modal)close();});
+    document.addEventListener('keydown',e=>{if(e.key==='Escape'&&modal.classList.contains('show'))close();});
+  </script>
+
 </body>
 </html>
